@@ -7,7 +7,7 @@ use App\Models\AlternatifKriteriaValue;
 use App\Models\Kriteria;
 use Illuminate\Http\Request;
 
-class MethodeWpController extends Controller
+class MethodeSAWController extends Controller
 {
     public function index()
     {
@@ -16,17 +16,16 @@ class MethodeWpController extends Controller
         return view('menu.methodewp', compact('data'));
     }
 
-    public function methodewp()
+    public function methodesaw()
     {
 
-        // Mengambil data dari tabel Alternatif
         $alternatif = Alternatif::all();
-
-        // Mengambil data dari tabel Kriteria
         $kriteria = Kriteria::all();
-
-        // Mengambil data dari tabel AlternatifKriteriaValue
         $altkrit = AlternatifKriteriaValue::all();
+
+        if ($altkrit->isEmpty()) {
+            return view('kosong.index');
+        }
 
         // Membuat array untuk menyimpan bobot kriteria
         $max = [];
@@ -67,14 +66,13 @@ class MethodeWpController extends Controller
     public function hasil()
     {
 
-        // Mengambil data dari tabel Alternatif
         $alternatif = Alternatif::all();
-
-        // Mengambil data dari tabel Kriteria
         $kriteria = Kriteria::all();
-
-        // Mengambil data dari tabel AlternatifKriteriaValue
         $altkrit = AlternatifKriteriaValue::all();
+
+        if ($altkrit->isEmpty()) {
+            return view('kosong.index');
+        }
 
         // Membuat array untuk menyimpan bobot kriteria
         $max = [];

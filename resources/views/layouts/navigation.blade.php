@@ -20,7 +20,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('methodewp')" :active="request()->routeIs('methodewp')">
+                    <x-nav-link :href="route('methodesaw')" :active="request()->routeIs('methodesaw')">
                         {{ __('Methode SAW') }}
                     </x-nav-link>
                 </div>

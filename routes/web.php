@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataController;
-use App\Http\Controllers\MethodeWpController;
+use App\Http\Controllers\MethodeSAWController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,10 +52,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/data/value/{id}', [DataController::class, 'destroydata'])->name('data.destroy');
 
 
-    Route::get('/methodewp', [MethodeWpController::class, 'methodewp'])->name('methodewp');
-    Route::get('/methodewp/generate', [MethodeWpController::class, 'methodewp'])->name('methodewp.generate');
-
-    Route::get('/hasil', [MethodeWpController::class, 'hasil'])->name('hasil');
+    Route::get('/methodesaw', [MethodeSAWController::class, 'methodesaw'])->name('methodesaw');
+    Route::get('/hasil', [MethodeSAWController::class, 'hasil'])->name('hasil');
 });
 
 require __DIR__ . '/auth.php';
